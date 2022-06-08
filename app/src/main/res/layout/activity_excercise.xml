@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintParent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseActivity">
+
+<!-- we are using default height size for our actionbar -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarExercise"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:theme="@style/ToolbarTheme"
+        app:titleTextColor="#808080"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!-- <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="5dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="@color/color_accent"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_round_border="false"
+        app:layout_constraintTop_toBottomOf="@id/textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        /> -->
+
+    <ImageView
+        android:id="@+id/ivExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        tools:background="@drawable/ic_jumping_jacks"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        android:layout_marginBottom="100sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/llFrameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rvExerciseStatus"
+        android:gravity="center"
+        >
+
+
+    <TextView
+        android:id="@+id/tvExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="GET READY FOR"
+        android:textSize="@dimen/default_button_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/color_accent" />
+
+        <FrameLayout
+            android:id="@+id/flProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/item_circular_accent_border"
+            android:layout_marginBottom="10sp"
+            >
+
+            <!-- the reason we set the ration to -90
+                is because we want our progress bar to start
+                at top 90 degree angle
+                Use indeterminate mode for the progress bar when you do not know how long an operation will take.
+                Indeterminate mode is the default for progress bar and shows a cyclic animation without a specific amount of progress indicated.
+                The following example shows an indeterminate progress bar:
+                 -->
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/circular_progress_gray"
+                android:indeterminate="false"
+                android:max="10"
+                android:progress="100"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:rotation="-90" />
+
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/item_circular_color_accent_background"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textviewTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    tools:text="10"
+                    />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvDialogUpcomingExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upcoming_exercise"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvUpcomingExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="jumping jacks"
+            android:textSize="@dimen/default_button_text_size"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExerciseStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_layout_default_padding" >
+        <!-- THE DEFAULT VALUE OF OUR PADDING -->
+        5dp
+    </dimen>
+    <dimen name="default_button_text_size" >
+        <!-- THE DEFAULT VALUE OF OUR BUTTON TEXT -->
+        22sp
+    </dimen>
+</resources>
