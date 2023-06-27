@@ -30,7 +30,7 @@ class Bmi : AppCompatActivity() {
         }
 
         //setting up our toolbar
-        setSupportActionBar(binding?.tbBmi)
+        //setSupportActionBar(binding?.tbBmi)
 
         //to show back button in the toolbar
         if(supportActionBar != null){

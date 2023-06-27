@@ -40,7 +40,7 @@ class History : AppCompatActivity() {
         }
 
         //setting up our toolbar
-        setSupportActionBar(binding?.tbHistory)
+        //setSupportActionBar(binding?.tbHistory)
 
         //to show back button in the toolbar
         if(supportActionBar != null){

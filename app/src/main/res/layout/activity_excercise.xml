@@ -9,16 +9,6 @@
 
 <!-- we are using default height size for our actionbar -->
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarExercise"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="#FFFFFF"
-        android:theme="@style/ToolbarTheme"
-        app:titleTextColor="#808080"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
     <!-- <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/circularProgressBar"
         android:layout_width="wrap_content"
@@ -53,32 +43,30 @@
         android:id="@+id/llFrameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rvExerciseStatus"
         android:gravity="center"
-        >
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/rvExerciseStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivExercise">
 
 
-    <TextView
-        android:id="@+id/tvExercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="GET READY FOR"
-        android:textSize="@dimen/default_button_text_size"
-        android:textStyle="bold"
-        android:textColor="@color/color_accent" />
+        <TextView
+            android:id="@+id/tvExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_accent"
+            android:textSize="@dimen/default_button_text_size"
+            android:textStyle="bold"
+            tools:text="GET READY FOR" />
 
         <FrameLayout
             android:id="@+id/flProgressBar"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/item_circular_accent_border"
             android:layout_marginBottom="10sp"
-            >
+            android:background="@drawable/item_circular_accent_border">
 
             <!-- the reason we set the ration to -90
                 is because we want our progress bar to start
@@ -116,8 +104,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    tools:text="10"
-                    />
+                    tools:text="10" />
 
             </LinearLayout>
         </FrameLayout>
@@ -127,18 +114,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/upcoming_exercise"
-            android:textColor="@color/black"
-            />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvUpcomingExercise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="jumping jacks"
-            android:textSize="@dimen/default_button_text_size"
             android:textColor="@color/black"
+            android:textSize="@dimen/default_button_text_size"
             android:textStyle="bold"
-            />
+            tools:text="jumping jacks" />
 
     </LinearLayout>
 
@@ -146,10 +131,10 @@
         android:id="@+id/rvExerciseStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivExercise" />
 
 
 

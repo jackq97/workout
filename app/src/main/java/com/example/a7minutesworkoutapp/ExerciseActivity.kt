@@ -51,7 +51,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }*/
 
         //setting up our toolbar
-        setSupportActionBar(binding?.toolbarExercise)
+        //setSupportActionBar(binding?.toolbarExercise)
 
         //to show back button in the toolbar
         if(supportActionBar != null){
@@ -61,10 +61,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
 
         //setting a back button in our toolbar
-        binding?.toolbarExercise?.setNavigationOnClickListener {
+        /*binding?.toolbarExercise?.setNavigationOnClickListener {
             // we are calling our alert dialog on back pressed
             onBackPressedAlertDialog()
-        }
+        }*/
 
         // function for setting up recycler view
         setupExerciseStatusRecyclerView()
@@ -77,8 +77,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // inside our object exercise list method
     private var currentExercisePosition = -1
 
-    private val exerciseTimer: Long = 1
-    private val restTimer: Long = 1
+    private val exerciseTimer: Long = 30
+    private val restTimer: Long = 10
 
     private var binding: ActivityExcerciseBinding? = null // binding
     //tts
@@ -322,7 +322,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun setDefaultConstraints() {
 
         val params = binding?.llFrameLayout?.layoutParams as ConstraintLayout.LayoutParams
-        params.topToBottom = binding?.toolbarExercise!!.id
+        //params.topToBottom = binding?.toolbarExercise!!.id
         params.bottomToBottom = binding?.rvExerciseStatus!!.id
         binding?.llFrameLayout?.requestLayout()
 
